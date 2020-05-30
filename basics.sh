@@ -23,10 +23,10 @@
         fi \
         && echo "\n-> homebrew installed <-\n" \
         && echo "\n-> installing from brew:" \
-        && echo "     zsh python3 cmake git htop openssl readline sqlite3 tree unar xz zlib pipx pyenv\n" \
+        && echo "     zsh python3 cmake git htop openssl readline sqlite3 tree unar xz zlib pipx postgres pyenv\n" \
         && brew reinstall zsh python3 cmake \
         && brew reinstall git htop openssl readline sqlite3 tree unar xz zlib \
-        && brew reinstall pipx pyenv
+        && brew reinstall pipx postgres pyenv
     ) \
     && echo "\n-> packages installed from brew! <-\n"
 
@@ -48,15 +48,10 @@
     echo "\n-> installing software from homebrew casks:"
     echo "   google-chrome lastpass mysqlworkbench slack sublime-text the-unarchiver whatsapp"
     (
-        brew cask reinstall authy google-chrome lastpass mysqlworkbench \
-        brew cask reinstall slack sublime-text the-unarchiver \
+        brew cask reinstall authy google-chrome lastpass mysqlworkbench
+        brew cask reinstall slack sublime-text the-unarchiver
         brew cask reinstall whatsapp
         pipx ensurepath && source ~/.zshrc
-#         # Uncomment block if you want to install the microsoft stuff
-#         echo "\n-> installing microsoft stuff from homebrew casks:"
-#         echo "   microsoft-edge microsoft-office microsoft-teams"
-#         brew cask reinstall microsoft-edge microsoft-office microsoft-teams
-#         brew cask reinstall drawio
     ) \
     && echo "\n-> installation from homebrew casks successfull <-\n"
 
