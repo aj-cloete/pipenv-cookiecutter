@@ -41,9 +41,6 @@ setup(
     ],
     dependency_links=[],
     description="{{ cookiecutter.project_short_description }}",
-    {%- if "no" not in cookiecutter.command_line_interface|lower %}
-    entry_points={"console_scripts": ["{{ cookiecutter.repo_name }}={{ cookiecutter.repo_name }}.cli:main"]},
-    {%- endif %}
     install_requires=[{%- if cookiecutter.command_line_interface|lower == "click" %}"click>=6.0"{%- endif %}],
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
